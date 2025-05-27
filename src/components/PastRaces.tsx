@@ -13,6 +13,7 @@ const pastRaces = [
     surface: '芝',
     winner: 'イクイノックス',
     predictionAccuracy: 95,
+    predictionCorrect: true
   },
   {
     id: 2,
@@ -24,6 +25,7 @@ const pastRaces = [
     surface: '芝',
     winner: 'スターズオンアース',
     predictionAccuracy: 90,
+    predictionCorrect: true
   },
   // 他のレースデータ...
 ];
@@ -99,12 +101,21 @@ export default function PastRaces() {
                     {race.date}
                   </td>
                   <td className="px-4 py-4 whitespace-nowrap">
-                    <Link
-                      to={`/prediction/${race.id}`}
-                      className="text-sm font-medium text-indigo-600 hover:text-indigo-900"
-                    >
-                      {race.name}
-                    </Link>
+                    <div className="flex items-center">
+                      <Link
+                        to={`/prediction/${race.id}`}
+                        className="text-sm font-medium text-indigo-600 hover:text-indigo-900"
+                      >
+                        {race.name}
+                      </Link>
+                      {race.predictionCorrect && (
+                        <img 
+                          src="https://raw.githubusercontent.com/stackblitz/stackblitz-icons/main/public/target.svg"
+                          alt="的中"
+                          className="w-5 h-5 ml-2"
+                        />
+                      )}
+                    </div>
                   </td>
                   <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500">
                     {race.venue}
