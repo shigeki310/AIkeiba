@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import RaceList from './components/RaceList';
 import RaceListByDay from './components/RaceListByDay';
 import PastRaces from './components/PastRaces';
@@ -12,7 +13,7 @@ import PremiumService from './components/PremiumService';
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#e8f5e9]">
+    <div className="min-h-screen bg-[#e8f5e9] flex flex-col">
       <Navbar />
       <div className="bg-gray-50 py-8 border-b">
         <div className="container mx-auto px-4">
@@ -24,7 +25,7 @@ function App() {
           </p>
         </div>
       </div>
-      <main className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-4 py-8 flex-grow">
         <Routes>
           <Route path="/" element={<RaceList />} />
           <Route path="/races/:venue/:day" element={<RaceListByDay />} />
@@ -36,6 +37,7 @@ function App() {
           <Route path="/premium" element={<PremiumService />} />
         </Routes>
       </main>
+      <Footer />
       <Toaster position="top-right" />
     </div>
   );
