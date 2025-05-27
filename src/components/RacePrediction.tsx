@@ -27,6 +27,38 @@ const predictions = {
             ]
           }
         },
+        {
+          horseNumber: 3,
+          horseName: 'ドリームソルジャー',
+          odds: 4.2,
+          probability: 23.8,
+          analysis: {
+            prediction: '1着予想',
+            probability: '23.8%',
+            reasons: [
+              '前走での瞬発力が際立っており、勝負所での切れ味が魅力',
+              '東京コースでの成績が抜群（2戦2勝）で、コース適性は申し分なし',
+              '追い切りの動きが良好で、仕上がり具合は上々',
+              '相性の良い騎手との組み合わせで、信頼度が高い'
+            ]
+          }
+        },
+        {
+          horseNumber: 7,
+          horseName: 'ライトニングボルト',
+          odds: 5.8,
+          probability: 17.2,
+          analysis: {
+            prediction: '1着予想',
+            probability: '17.2%',
+            reasons: [
+              '前走から斤量が減少し、条件面での好転が見られる',
+              '長距離適性が高く、終盤の粘り強さが持ち味',
+              '雨天時の実績も十分で、馬場状態を問わない適応力の高さ',
+              '上がり3ハロンの時計が安定しており、終盤の伸びしろが期待できる'
+            ]
+          }
+        }
       ],
       place: [
         {
@@ -44,6 +76,36 @@ const predictions = {
             ]
           }
         },
+        {
+          horseNumber: 3,
+          horseName: 'ドリームソルジャー',
+          odds: 1.6,
+          probability: 62.5,
+          analysis: {
+            prediction: '複勝圏内予想',
+            probability: '62.5%',
+            reasons: [
+              '前走での上がり3ハロンが優れており、末脚の確実性が高い',
+              '重賞での複勝圏内実績が豊富で、大舞台での経験値が十分',
+              '調教師の仕上げ方に定評があり、レースへの準備は万全'
+            ]
+          }
+        },
+        {
+          horseNumber: 7,
+          horseName: 'ライトニングボルト',
+          odds: 2.1,
+          probability: 47.6,
+          analysis: {
+            prediction: '複勝圏内予想',
+            probability: '47.6%',
+            reasons: [
+              '前走での敗因が明確で、今回は改善策が講じられている',
+              '同舞台での好走実績があり、コース適性は証明済み',
+              '追い切りでは余力を残しながらも好時計をマーク'
+            ]
+          }
+        }
       ],
       trio: [
         {
@@ -61,6 +123,36 @@ const predictions = {
             ]
           }
         },
+        {
+          combination: [1, 3, 5],
+          odds: 32.1,
+          probability: 3.1,
+          analysis: {
+            prediction: '3連複予想（1-3-5）',
+            probability: '3.1%',
+            reasons: [
+              '3頭の適性距離が今回の条件と合致している',
+              '前走での各馬の上がり3ハロンが優秀で、終盤の脚質が合う',
+              '過去の対戦成績から、好相性が証明されている',
+              '騎手同士の連携が良好で、レース展開での協調性が期待できる'
+            ]
+          }
+        },
+        {
+          combination: [3, 7, 8],
+          odds: 41.2,
+          probability: 2.4,
+          analysis: {
+            prediction: '3連複予想（3-7-8）',
+            probability: '2.4%',
+            reasons: [
+              '3頭とも前走からの上昇度が著しく、勢いがある',
+              '馬場状態の変化に対する適応力が高い組み合わせ',
+              '各馬の距離適性が高く、長丁場での安定感がある',
+              '相性の良い騎手との組み合わせで、信頼度が高い'
+            ]
+          }
+        }
       ]
     }
   }
@@ -195,7 +287,9 @@ function RacePrediction() {
                 <div>
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center">
-                      <div className="text-lg font-medium">{combo.combination.join('-')}</div>
+                      <div className="text-lg font-medium">
+                        {combo.combination.join('-')}
+                      </div>
                     </div>
                     <div className="text-right">
                       <div className="text-sm text-gray-500">予想オッズ</div>
