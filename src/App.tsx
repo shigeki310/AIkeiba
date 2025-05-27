@@ -1,13 +1,13 @@
-import { Routes, Route } from 'react-router-dom'
-import { Toaster } from 'react-hot-toast'
-import Navbar from './components/Navbar'
-import RaceList from './components/RaceList'
-import PastResults from './components/PastResults'
-import RacePrediction from './components/RacePrediction'
-import SignupForm from './components/SignupForm'
-import LoginForm from './components/LoginForm'
-import UserSettings from './components/UserSettings'
-import PremiumService from './components/PremiumService'
+import { Routes, Route } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
+import Navbar from './components/Navbar';
+import RaceList from './components/RaceList';
+import PastResults from './components/PastResults';
+import RacePrediction from './components/RacePrediction';
+import SignupForm from './components/SignupForm';
+import LoginForm from './components/LoginForm';
+import UserSettings from './components/UserSettings';
+import PremiumService from './components/PremiumService';
 
 function App() {
   return (
@@ -16,6 +16,7 @@ function App() {
       <main className="container mx-auto px-4 py-8">
         <Routes>
           <Route path="/" element={<RaceList />} />
+          <Route path="/races/:venue/:day" element={<RaceList />} />
           <Route path="/past-results" element={<PastResults />} />
           <Route path="/prediction/:raceId" element={<RacePrediction />} />
           <Route path="/signup" element={<SignupForm />} />
@@ -26,7 +27,7 @@ function App() {
       </main>
       <Toaster position="top-right" />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
