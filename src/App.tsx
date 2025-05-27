@@ -16,7 +16,6 @@ function App() {
       <main className="container mx-auto px-4 py-8">
         <Routes>
           <Route path="/" element={<RaceList />} />
-          <Route path="/races/:venue/:day" element={<RaceList />} />
           <Route path="/past-results" element={<PastResults />} />
           <Route path="/prediction/:raceId" element={<RacePrediction />} />
           <Route path="/signup" element={<SignupForm />} />
