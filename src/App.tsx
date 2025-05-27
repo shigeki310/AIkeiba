@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import Navbar from './components/Navbar';
 import RaceList from './components/RaceList';
+import RaceListByDay from './components/RaceListByDay';
 import PastResults from './components/PastResults';
 import RacePrediction from './components/RacePrediction';
 import SignupForm from './components/SignupForm';
@@ -16,6 +17,7 @@ function App() {
       <main className="container mx-auto px-4 py-8">
         <Routes>
           <Route path="/" element={<RaceList />} />
+          <Route path="/races/:venue/:day" element={<RaceListByDay />} />
           <Route path="/past-results" element={<PastResults />} />
           <Route path="/prediction/:raceId" element={<RacePrediction />} />
           <Route path="/signup" element={<SignupForm />} />
