@@ -16,7 +16,6 @@ const predictions = {
           horseName: 'シャドウディーヴァ',
           odds: 3.5,
           probability: 28.5,
-          isAccurate: true,
           analysis: {
             prediction: '1着予想',
             probability: '28.5%',
@@ -28,7 +27,6 @@ const predictions = {
             ]
           }
         },
-        // ... other horses
       ],
       place: [
         {
@@ -36,7 +34,6 @@ const predictions = {
           horseName: 'シャドウディーヴァ',
           odds: 1.4,
           probability: 71.4,
-          isAccurate: true,
           analysis: {
             prediction: '複勝圏内予想',
             probability: '71.4%',
@@ -47,14 +44,12 @@ const predictions = {
             ]
           }
         },
-        // ... other horses
       ],
       trio: [
         {
           combination: [1, 3, 7],
           odds: 24.5,
           probability: 4.1,
-          isAccurate: true,
           analysis: {
             prediction: '3連複予想（1-3-7）',
             probability: '4.1%',
@@ -66,7 +61,6 @@ const predictions = {
             ]
           }
         },
-        // ... other combinations
       ]
     }
   }
@@ -117,13 +111,6 @@ function RacePrediction() {
                         {horse.horseNumber}
                       </span>
                       <span className="ml-2 text-lg font-medium">{horse.horseName}</span>
-                      {horse.isAccurate && (
-                        <img 
-                          src="https://raw.githubusercontent.com/stackblitz/stackblitz-icons/main/public/target.svg" 
-                          alt="的中" 
-                          className="w-6 h-6 ml-2"
-                        />
-                      )}
                     </div>
                     <div className="text-right">
                       <div className="text-sm text-gray-500">予想オッズ</div>
@@ -168,13 +155,6 @@ function RacePrediction() {
                         {horse.horseNumber}
                       </span>
                       <span className="ml-2 text-lg font-medium">{horse.horseName}</span>
-                      {horse.isAccurate && (
-                        <img 
-                          src="https://raw.githubusercontent.com/stackblitz/stackblitz-icons/main/public/target.svg" 
-                          alt="的中" 
-                          className="w-6 h-6 ml-2"
-                        />
-                      )}
                     </div>
                     <div className="text-right">
                       <div className="text-sm text-gray-500">予想オッズ</div>
@@ -216,13 +196,6 @@ function RacePrediction() {
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center">
                       <div className="text-lg font-medium">{combo.combination.join('-')}</div>
-                      {combo.isAccurate && (
-                        <img 
-                          src="https://raw.githubusercontent.com/stackblitz/stackblitz-icons/main/public/target.svg" 
-                          alt="的中" 
-                          className="w-6 h-6 ml-2"
-                        />
-                      )}
                     </div>
                     <div className="text-right">
                       <div className="text-sm text-gray-500">予想オッズ</div>

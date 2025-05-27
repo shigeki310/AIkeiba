@@ -28,6 +28,26 @@ const races = [
   },
 ];
 
+// モックデータ - 最近の予測結果
+const recentPredictions = [
+  {
+    id: 1,
+    name: '第83回 東京優駿（日本ダービー）',
+    date: '2023-05-28',
+    predictedWinner: 'イクイノックス',
+    actualWinner: 'イクイノックス',
+    accuracy: 95,
+  },
+  {
+    id: 2,
+    name: '第64回 宝塚記念',
+    date: '2023-06-25',
+    predictedWinner: 'スターズオンアース',
+    actualWinner: 'スターズオンアース',
+    accuracy: 90,
+  },
+];
+
 function RaceList() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-10 gap-4 md:gap-6">
@@ -68,7 +88,7 @@ function RaceList() {
       <div className="lg:col-span-7">
         <div className="bg-white rounded-lg shadow">
           <div className="px-4 py-5 sm:px-6">
-            <h2 className="text-xl font-semibold text-gray-900">過去の予測結果</h2>
+            <h2 className="text-xl font-semibold text-gray-900">最近の予測結果</h2>
           </div>
           <div className="px-4 py-5 sm:p-6 overflow-x-auto">
             <table className="min-w-full divide-y divide-gray-200">
@@ -92,40 +112,25 @@ function RaceList() {
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
-                <tr>
-                  <td className="px-3 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                    第83回 東京優駿（日本ダービー）
-                  </td>
-                  <td className="px-3 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    2023-05-28
-                  </td>
-                  <td className="px-3 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                    イクイノックス
-                  </td>
-                  <td className="px-3 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                    イクイノックス
-                  </td>
-                  <td className="px-3 sm:px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                    95%
-                  </td>
-                </tr>
-                <tr>
-                  <td className="px-3 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                    第64回 宝塚記念
-                  </td>
-                  <td className="px-3 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    2023-06-25
-                  </td>
-                  <td className="px-3 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                    スターズオンアース
-                  </td>
-                  <td className="px-3 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                    スターズオンアース
-                  </td>
-                  <td className="px-3 sm:px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                    90%
-                  </td>
-                </tr>
+                {recentPredictions.map((prediction) => (
+                  <tr key={prediction.id}>
+                    <td className="px-3 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                      {prediction.name}
+                    </td>
+                    <td className="px-3 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      {prediction.date}
+                    </td>
+                    <td className="px-3 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                      {prediction.predictedWinner}
+                    </td>
+                    <td className="px-3 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                      {prediction.actualWinner}
+                    </td>
+                    <td className="px-3 sm:px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                      {prediction.accuracy}%
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
