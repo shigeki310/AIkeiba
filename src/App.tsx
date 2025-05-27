@@ -3,7 +3,7 @@ import { Toaster } from 'react-hot-toast';
 import Navbar from './components/Navbar';
 import RaceList from './components/RaceList';
 import RaceListByDay from './components/RaceListByDay';
-import PastResults from './components/PastResults';
+import PastRaces from './components/PastRaces';
 import RacePrediction from './components/RacePrediction';
 import SignupForm from './components/SignupForm';
 import LoginForm from './components/LoginForm';
@@ -18,7 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<RaceList />} />
           <Route path="/races/:venue/:day" element={<RaceListByDay />} />
-          <Route path="/past-results" element={<PastResults />} />
+          <Route path="/past-races" element={<PastRaces />} />
           <Route path="/prediction/:raceId" element={<RacePrediction />} />
           <Route path="/signup" element={<SignupForm />} />
           <Route path="/login" element={<LoginForm />} />

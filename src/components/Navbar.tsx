@@ -48,10 +48,10 @@ function Navbar() {
                 </Menu.Items>
               </Menu>
               <Link
-                to="/past-results"
+                to="/past-races"
                 className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-900"
               >
-                過去の予測結果
+                過去のレース
               </Link>
               {isAuthenticated && (
                 <Link
@@ -151,10 +151,10 @@ function Navbar() {
             </Menu.Items>
           </Menu>
           <Link
-            to="/past-results"
+            to="/past-races"
             className="block px-3 py-2 text-base font-medium text-gray-500 hover:text-gray-900"
           >
-            過去の予測結果
+            過去のレース
           </Link>
           {isAuthenticated && (
             <Link
