@@ -11,10 +11,14 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.17",
-    "@heroicons/react": "^2.0.18",
+    "@heroicons/react/20/solid": "^2.0.18",
+    "@heroicons/react/24/outline": "^2.0.18",
+    "@stripe/stripe-js": "^2.2.0",
     "@supabase/supabase-js": "^2.39.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-dropzone": "^14.2.3",
+    "react-hot-toast": "^2.4.1",
     "react-router-dom": "^6.11.2",
     "zustand": "^4.4.1"
   },

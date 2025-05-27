@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Menu } from '@headlessui/react';
-import { ChevronDownIcon } from '@heroicons/react/20/solid';
+import { ChevronDownIcon, UserCircleIcon } from '@heroicons/react/20/solid';
 import { useAuthStore } from '../store/authStore';
 
 // モックデータ
@@ -12,7 +12,7 @@ const races = [
 ];
 
 function Navbar() {
-  const { isAuthenticated, logout } = useAuthStore()
+  const { isAuthenticated, logout, profile } = useAuthStore()
 
   return (
     <nav className="bg-[#e8f5e9] shadow-lg">
@@ -53,6 +53,14 @@ function Navbar() {
               >
                 過去の予測結果
               </Link>
+              {isAuthenticated && (
+                <Link
+                  to="/premium"
+                  className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-900"
+                >
+                  プレミアムサービス
+                </Link>
+              )}
             </div>
           </div>
           <div className="flex items-center space-x-4">
@@ -72,12 +80,45 @@ function Navbar() {
                 </Link>
               </>
             ) : (
-              <button
-                onClick={logout}
-                className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700"
-              >
-                ログアウト
-              </button>
+              <Menu as="div" className="relative">
+                <Menu.Button className="flex items-center">
+                  {profile?.avatar_url ? (
+                    <img
+                      src={profile.avatar_url}
+                      alt="Profile"
+                      className="h-8 w-8 rounded-full"
+                    />
+                  ) : (
+                    <UserCircleIcon className="h-8 w-8 text-gray-400" />
+                  )}
+                </Menu.Button>
+                <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                  <Menu.Item>
+                    {({ active }) => (
+                      <Link
+                        to="/settings"
+                        className={`${
+                          active ? 'bg-gray-100' : ''
+                        } block px-4 py-2 text-sm text-gray-700`}
+                      >
+                        設定
+                      </Link>
+                    )}
+                  </Menu.Item>
+                  <Menu.Item>
+                    {({ active }) => (
+                      <button
+                        onClick={logout}
+                        className={`${
+                          active ? 'bg-gray-100' : ''
+                        } block w-full text-left px-4 py-2 text-sm text-gray-700`}
+                      >
+                        ログアウト
+                      </button>
+                    )}
+                  </Menu.Item>
+                </Menu.Items>
+              </Menu>
             )}
           </div>
         </div>
