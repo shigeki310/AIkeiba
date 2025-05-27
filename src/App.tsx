@@ -16,10 +16,10 @@ function App() {
       <Navbar />
       <div className="bg-gray-50 py-8 border-b">
         <div className="container mx-auto px-4">
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 text-center mb-4">
+          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
             AIKeibaへようこそ
           </h1>
-          <p className="text-gray-600 text-center max-w-3xl mx-auto leading-relaxed">
+          <p className="text-gray-600 max-w-3xl leading-relaxed">
             AIKeibaは最新の人工知能技術と統計分析を組み合わせた独自のアルゴリズムを使用し、競馬予想の新しい形を提案しています。データに基づいた客観的な予測で、あなたの競馬体験をより豊かにします。是非、ご覧ください！
           </p>
         </div>
