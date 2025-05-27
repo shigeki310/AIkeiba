@@ -25,7 +25,7 @@ function Navbar() {
             <div className="hidden md:ml-6 md:flex md:space-x-8">
               <Menu as="div" className="relative">
                 <Menu.Button className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900">
-                  今週のレース
+                  今週のピックアップレース
                   <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
                 </Menu.Button>
                 <Menu.Items className="absolute left-0 z-10 mt-2 w-56 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
