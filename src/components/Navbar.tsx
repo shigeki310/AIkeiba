@@ -35,7 +35,7 @@ function Navbar() {
                       <Menu.Item key={race.id}>
                         {({ active }) => (
                           <Link
-                            to={`/prediction/${race.id}`}
+                            to={`/races/${race.venue}/${race.day}`}
                             className={`${
                               active ? 'bg-gray-100 text-gray-900' : 'text-gray-700'
                             } block px-4 py-2 text-sm`}
@@ -128,4 +128,4 @@ function Navbar() {
   );
 }
 
-export default Navbar
+export default Navbar;
