@@ -1,6 +1,7 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Menu } from '@headlessui/react';
-import { ChevronDownIcon, UserCircleIcon } from '@heroicons/react/20/solid';
+import { ChevronDownIcon, UserCircleIcon } from '@heroicons/react/24/solid';
 import { useAuthStore } from '../store/authStore';
 
 // モックデータ
