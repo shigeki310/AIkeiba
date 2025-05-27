@@ -34,7 +34,7 @@ function RaceList() {
       <div className="md:col-span-3">
         <div className="bg-white rounded-lg shadow">
           <div className="px-4 py-5 sm:px-6">
-            <h2 className="text-xl font-semibold text-gray-900">今週のレース</h2>
+            <h2 className="text-xl font-semibold text-gray-900">今週のピックアップレース</h2>
           </div>
           <ul className="divide-y divide-gray-200">
             {races.map((race) => (
