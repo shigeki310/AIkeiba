@@ -47,55 +47,18 @@ function RaceList() {
     : races;
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div>
-        <div className="space-y-6">
-          <VenueSelector
-            selectedVenue={selectedVenue}
-            onVenueChange={setSelectedVenue}
-          />
-          <div className="bg-white rounded-lg shadow">
-            <div className="px-4 py-5 sm:px-6">
-              <h2 className="text-xl font-semibold text-gray-900">今週のレース</h2>
-            </div>
-            <ul className="divide-y divide-gray-200">
-              {filteredRaces.map((race) => (
-                <li key={race.id}>
-                  <Link
-                    to={`/prediction/${race.id}`}
-                    className="block hover:bg-gray-50"
-                  >
-                    <div className="px-4 py-4 sm:px-6">
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center">
-                          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                            {race.grade}
-                          </span>
-                          <p className="ml-2 text-sm font-medium text-gray-900">
-                            {race.name}
-                          </p>
-                        </div>
-                        <div className="flex items-center">
-                          <p className="text-sm text-gray-500">{race.venue}</p>
-                          <p className="ml-2 text-sm text-gray-500">{race.date}</p>
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div className="bg-white rounded-lg shadow">
-          <div className="px-4 py-5 sm:px-6">
-            <h2 className="text-xl font-semibold text-gray-900">ピックアップレース</h2>
-          </div>
-          <div className="px-4 py-5 sm:p-6">
+    <div className="flex flex-col lg:flex-row gap-6">
+      {/* 左コンテナ (30%) */}
+      <div className="w-full lg:w-[30%] space-y-6">
+        <VenueSelector
+          selectedVenue={selectedVenue}
+          onVenueChange={setSelectedVenue}
+        />
+        <div className="bg-white rounded-lg shadow-lg p-6">
+          <h2 className="text-xl font-bold text-gray-900 mb-4">今週のピックアップレース</h2>
+          <div className="space-y-6">
             {pickupRaces.map((race) => (
-              <div key={race.id} className="mb-6 last:mb-0">
+              <div key={race.id} className="border-b border-gray-200 pb-4 last:border-0 last:pb-0">
                 <div className="flex items-center mb-2">
                   <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
                     {race.grade}
@@ -109,6 +72,42 @@ function RaceList() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </div>
+
+      {/* 右コンテナ (70%) */}
+      <div className="w-full lg:w-[70%]">
+        <div className="bg-white rounded-lg shadow-lg">
+          <div className="p-6 border-b border-gray-200">
+            <h2 className="text-xl font-bold text-gray-900">今週のレース</h2>
+          </div>
+          <div className="overflow-auto max-h-[calc(100vh-300px)]">
+            <ul className="divide-y divide-gray-200">
+              {filteredRaces.map((race) => (
+                <li key={race.id}>
+                  <Link
+                    to={`/prediction/${race.id}`}
+                    className="block hover:bg-gray-50 p-6"
+                  >
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                      <div className="flex items-center">
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                          {race.grade}
+                        </span>
+                        <p className="ml-2 text-sm font-medium text-gray-900">
+                          {race.name}
+                        </p>
+                      </div>
+                      <div className="flex items-center text-sm text-gray-500">
+                        <span className="mr-4">{race.venue}</span>
+                        <span>{race.date}</span>
+                      </div>
+                    </div>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
