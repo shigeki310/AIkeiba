@@ -106,7 +106,7 @@ export default function RaceListByDay() {
   const races = racesByVenue[venue][day];
 
   return (
-    <div className="bg-white rounded-lg shadow">
+    <div className="bg-white rounded-lg shadow mx-auto max-w-7xl">
       <div className="px-4 py-5 sm:px-6 border-b border-gray-200">
         <h2 className="text-xl font-semibold text-gray-900">
           {venue}競馬場 {day}日目 レース一覧
@@ -118,21 +118,19 @@ export default function RaceListByDay() {
             <li key={race.id}>
               <a
                 href={`/prediction/${race.id}`}
-                className="block hover:bg-gray-50 transition duration-150"
+                className="block hover:bg-gray-50 transition duration-150 px-4 py-4 sm:px-6"
               >
-                <div className="px-4 py-4 sm:px-6">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center">
-                      <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-indigo-100 text-indigo-800 font-semibold">
-                        {race.number}R
-                      </span>
-                      <div className="ml-4">
-                        <p className="text-sm font-medium text-gray-900">{race.name}</p>
-                        <p className="text-sm text-gray-500">{race.conditions}</p>
-                      </div>
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                  <div className="flex items-center mb-2 sm:mb-0">
+                    <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-indigo-100 text-indigo-800 font-semibold text-sm">
+                      {race.number}R
+                    </span>
+                    <div className="ml-4">
+                      <p className="text-sm font-medium text-gray-900">{race.name}</p>
+                      <p className="text-sm text-gray-500 mt-1">{race.conditions}</p>
                     </div>
-                    <div className="text-sm text-gray-500">{race.startTime}</div>
                   </div>
+                  <div className="text-sm text-gray-500">{race.startTime}</div>
                 </div>
               </a>
             </li>
