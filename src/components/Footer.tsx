@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="bg-white border-t">
       <div className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* サービス情報 */}
           <div>
             <h3 className="text-lg font-semibold text-gray-900 mb-4">AIKeiba</h3>
@@ -35,60 +35,6 @@ export default function Footer() {
                 </Link>
               </li>
             </ul>
-          </div>
-
-          {/* サポート */}
-          <div>
-            <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">
-              サポート
-            </h3>
-            <ul className="space-y-2">
-              <li>
-                <Link to="/faq" className="text-gray-600 hover:text-gray-900 text-sm">
-                  よくある質問
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="text-gray-600 hover:text-gray-900 text-sm">
-                  お問い合わせ
-                </Link>
-              </li>
-              <li>
-                <Link to="/terms" className="text-gray-600 hover:text-gray-900 text-sm">
-                  利用規約
-                </Link>
-              </li>
-              <li>
-                <Link to="/privacy" className="text-gray-600 hover:text-gray-900 text-sm">
-                  プライバシーポリシー
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* SNS */}
-          <div>
-            <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">
-              ソーシャルメディア
-            </h3>
-            <div className="flex space-x-4">
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:text-gray-900"
-              >
-                Twitter
-              </a>
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:text-gray-900"
-              >
-                Facebook
-              </a>
-            </div>
           </div>
         </div>
 
