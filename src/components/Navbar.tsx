@@ -49,10 +49,10 @@ function Navbar() {
                 </Menu.Items>
               </Menu>
               <Link
-                to="/past-results"
+                to="/past-races"
                 className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-900"
               >
-                過去の予測結果
+                過去のレース
               </Link>
               {isAuthenticated && (
                 <Link
@@ -66,20 +66,20 @@ function Navbar() {
           </div>
           <div className="flex items-center space-x-4">
             {!isAuthenticated ? (
-              <>
+              <div className="flex space-x-2">
                 <Link
                   to="/signup"
-                  className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
+                  className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
                 >
                   新規会員登録
                 </Link>
                 <Link
                   to="/login"
-                  className="inline-flex items-center px-4 py-2 border border-indigo-600 text-sm font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50"
+                  className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 border border-indigo-600 text-sm font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50"
                 >
                   ログイン
                 </Link>
-              </>
+              </div>
             ) : (
               <Menu as="div" className="relative">
                 <Menu.Button className="flex items-center">
@@ -122,6 +122,49 @@ function Navbar() {
               </Menu>
             )}
           </div>
+        </div>
+      </div>
+
+      {/* モバイルメニュー */}
+      <div className="md:hidden">
+        <div className="px-2 pt-2 pb-3 space-y-1">
+          <Menu as="div" className="relative">
+            <Menu.Button className="block px-3 py-2 text-base font-medium text-gray-900">
+              今週のレース
+            </Menu.Button>
+            <Menu.Items className="absolute left-0 z-10 mt-2 w-56 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+              <div className="py-1">
+                {races.map((race) => (
+                  <Menu.Item key={race.id}>
+                    {({ active }) => (
+                      <Link
+                        to={`/races/${race.venue}/${race.day}`}
+                        className={`${
+                          active ? 'bg-gray-100 text-gray-900' : 'text-gray-700'
+                        } block px-4 py-2 text-base`}
+                      >
+                        {race.name}
+                      </Link>
+                    )}
+                  </Menu.Item>
+                ))}
+              </div>
+            </Menu.Items>
+          </Menu>
+          <Link
+            to="/past-races"
+            className="block px-3 py-2 text-base font-medium text-gray-500 hover:text-gray-900"
+          >
+            過去のレース
+          </Link>
+          {isAuthenticated && (
+            <Link
+              to="/premium"
+              className="block px-3 py-2 text-base font-medium text-gray-500 hover:text-gray-900"
+            >
+              プレミアムサービス
+            </Link>
+          )}
         </div>
       </div>
     </nav>

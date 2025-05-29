@@ -6,7 +6,7 @@ const plans = [
   {
     id: 'basic',
     name: 'ベーシック',
-    price: '980',
+    price: '350',
     features: [
       'AIによるレース予想',
       '過去のレース結果分析',
@@ -28,20 +28,6 @@ const plans = [
     ],
     description: 'より詳細な分析と予想を行いたい方向け',
     popular: true
-  },
-  {
-    id: 'professional',
-    name: 'プロフェッショナル',
-    price: '4,980',
-    features: [
-      'プレミアムの全機能',
-      'AIによる予想根拠の詳細表示',
-      'プロ向け分析ツール',
-      '優先サポート',
-      'API アクセス権',
-      'カスタムレポート作成'
-    ],
-    description: 'プロフェッショナルな競馬予想を行う方向け'
   }
 ];
 
@@ -107,13 +93,16 @@ export default function PremiumService() {
         </p>
       </div>
 
-      <div className="mt-12 space-y-4 sm:mt-16 sm:grid sm:grid-cols-3 sm:gap-6 sm:space-y-0">
+      <div className="mt-12 space-y-4 sm:mt-16 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 max-w-4xl mx-auto">
         {plans.map((plan) => (
           <div
             key={plan.id}
-            className={`rounded-lg shadow-lg divide-y divide-gray-200 ${
-              plan.popular ? 'border-2 border-indigo-500' : ''
-            } ${selectedPlan === plan.id ? 'ring-2 ring-indigo-600' : ''}`}
+            onClick={() => setSelectedPlan(plan.id)}
+            className={`rounded-lg shadow-lg divide-y divide-gray-200 cursor-pointer relative transition-all duration-200 ${
+              selectedPlan === plan.id 
+                ? 'border-2 border-indigo-500 transform scale-105' 
+                : 'border border-gray-200 hover:border-gray-300'
+            }`}
           >
             {plan.popular && (
               <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2">
@@ -140,8 +129,8 @@ export default function PremiumService() {
               <button
                 onClick={() => setSelectedPlan(plan.id)}
                 disabled={isLoading}
-                className={`mt-8 block w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white ${
-                  plan.popular
+                className={`mt-8 block w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white transition-colors duration-200 ${
+                  selectedPlan === plan.id
                     ? 'bg-indigo-600 hover:bg-indigo-700'
                     : 'bg-gray-600 hover:bg-gray-700'
                 } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50`}
