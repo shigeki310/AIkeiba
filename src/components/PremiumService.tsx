@@ -111,8 +111,8 @@ export default function PremiumService() {
         {plans.map((plan) => (
           <div
             key={plan.id}
-            className={`rounded-lg shadow-lg divide-y divide-gray-200 ${
-              selectedPlan === plan.id ? 'border-2 border-indigo-500' : ''
+            className={`rounded-lg shadow-lg divide-y divide-gray-200 relative transition-all duration-200 ${
+              selectedPlan === plan.id ? 'border-2 border-indigo-500 transform scale-105' : 'border border-gray-200'
             }`}
           >
             {plan.popular && (
@@ -140,7 +140,7 @@ export default function PremiumService() {
               <button
                 onClick={() => setSelectedPlan(plan.id)}
                 disabled={isLoading}
-                className={`mt-8 block w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white ${
+                className={`mt-8 block w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white transition-colors duration-200 ${
                   selectedPlan === plan.id
                     ? 'bg-indigo-600 hover:bg-indigo-700'
                     : 'bg-gray-600 hover:bg-gray-700'
