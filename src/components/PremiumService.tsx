@@ -29,7 +29,6 @@ const plans = [
     description: 'より詳細な分析と予想を行いたい方向け',
     popular: true
   },
-  
 ];
 
 interface SubscriptionFormData {
