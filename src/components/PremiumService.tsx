@@ -6,7 +6,7 @@ const plans = [
   {
     id: 'basic',
     name: 'ベーシック',
-    price: '980',
+    price: '350',
     features: [
       'AIによるレース予想',
       '過去のレース結果分析',
@@ -29,20 +29,7 @@ const plans = [
     description: 'より詳細な分析と予想を行いたい方向け',
     popular: true
   },
-  {
-    id: 'professional',
-    name: 'プロフェッショナル',
-    price: '4,980',
-    features: [
-      'プレミアムの全機能',
-      'AIによる予想根拠の詳細表示',
-      'プロ向け分析ツール',
-      '優先サポート',
-      'API アクセス権',
-      'カスタムレポート作成'
-    ],
-    description: 'プロフェッショナルな競馬予想を行う方向け'
-  }
+  
 ];
 
 interface SubscriptionFormData {
