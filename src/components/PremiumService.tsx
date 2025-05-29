@@ -112,8 +112,8 @@ export default function PremiumService() {
           <div
             key={plan.id}
             className={`rounded-lg shadow-lg divide-y divide-gray-200 ${
-              plan.popular ? 'border-2 border-indigo-500' : ''
-            } ${selectedPlan === plan.id ? 'ring-2 ring-indigo-600' : ''}`}
+              selectedPlan === plan.id ? 'border-2 border-indigo-500' : ''
+            }`}
           >
             {plan.popular && (
               <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2">
@@ -141,7 +141,7 @@ export default function PremiumService() {
                 onClick={() => setSelectedPlan(plan.id)}
                 disabled={isLoading}
                 className={`mt-8 block w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white ${
-                  plan.popular
+                  selectedPlan === plan.id
                     ? 'bg-indigo-600 hover:bg-indigo-700'
                     : 'bg-gray-600 hover:bg-gray-700'
                 } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50`}
