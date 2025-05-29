@@ -28,7 +28,7 @@ const plans = [
     ],
     description: 'より詳細な分析と予想を行いたい方向け',
     popular: true
-  },
+  }
 ];
 
 interface SubscriptionFormData {
@@ -93,12 +93,15 @@ export default function PremiumService() {
         </p>
       </div>
 
-      <div className="mt-12 space-y-4 sm:mt-16 sm:grid sm:grid-cols-3 sm:gap-6 sm:space-y-0">
+      <div className="mt-12 space-y-4 sm:mt-16 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 max-w-4xl mx-auto">
         {plans.map((plan) => (
           <div
             key={plan.id}
-            className={`rounded-lg shadow-lg divide-y divide-gray-200 relative transition-all duration-200 ${
-              selectedPlan === plan.id ? 'border-2 border-indigo-500 transform scale-105' : 'border border-gray-200'
+            onClick={() => setSelectedPlan(plan.id)}
+            className={`rounded-lg shadow-lg divide-y divide-gray-200 cursor-pointer relative transition-all duration-200 ${
+              selectedPlan === plan.id 
+                ? 'border-2 border-indigo-500 transform scale-105' 
+                : 'border border-gray-200 hover:border-gray-300'
             }`}
           >
             {plan.popular && (
