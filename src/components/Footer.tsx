@@ -9,7 +9,8 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold text-gray-900 mb-4">AIKeiba</h3>
             <p className="text-gray-600 text-sm">
-              最新のAI技術を活用した競馬予想サービス。データに基づいた客観的な予測で、あなたの競馬体験をより豊かにします。
+              最新のAI技術を活用した競馬予想サービス。データに基づいた客観的な予測で、<br />
+              あなたの競馬体験をより豊かにします。
             </p>
           </div>
 
